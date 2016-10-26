@@ -116,7 +116,9 @@ module CarrierWave
       # [CarrierWave::FormNotMultipart] if the assigned parameter is a string
       #
       def cache!(new_file = sanitized_file)
+        puts "\n\nNEW FILE 1: #{new_file.inspect}\n\n"
         new_file = CarrierWave::SanitizedFile.new(new_file)
+        puts "\n\nNEW FILE 2: #{new_file.inspect}\n\n"
         return if new_file.empty?
 
         raise CarrierWave::FormNotMultipart if new_file.is_path? && ensure_multipart_form
