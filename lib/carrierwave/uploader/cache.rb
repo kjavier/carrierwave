@@ -133,8 +133,7 @@ module CarrierWave
           else
             puts "\n\nNEW FILE: #{new_file.inspect}"
             puts "\nWORK PATH: #{workfile_path.inspect}"
-            puts "\nROOT: #{root.inspect}"
-            puts "\nPATH: #{File.expand_path(workfile_path, root).inspect}\n\n"
+            puts "\nCARRIERWAVE TMP PATH: #{CarrierWave.tmp_path.inspect}"
             @file = new_file.copy_to(File.expand_path(workfile_path, root), permissions, directory_permissions)
           end
 
