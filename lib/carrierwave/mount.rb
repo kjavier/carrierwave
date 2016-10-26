@@ -143,7 +143,6 @@ module CarrierWave
         end
 
         def #{column}=(new_file)
-           puts "\n\nNEW FILE: #{new_file.inspect}\n\n"
           _mounter(:#{column}).cache([new_file])
         end
 

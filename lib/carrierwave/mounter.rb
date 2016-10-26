@@ -40,6 +40,7 @@ module CarrierWave
     def cache(new_files)
       return if not new_files or new_files == ""
       @uploaders = new_files.map do |new_file|
+        puts "\n\nNEW FILE: #{new_file.inspect}\n\n"
         uploader = blank_uploader
         uploader.cache!(new_file)
         uploader
