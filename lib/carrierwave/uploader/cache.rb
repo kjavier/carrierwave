@@ -131,9 +131,9 @@ module CarrierWave
           if move_to_cache
             @file = new_file.move_to(File.expand_path(workfile_path, root), permissions, directory_permissions)
           else
-            puts "\n\nNEW FILE: #{new_file.inspect}"
-            puts "\nWORK PATH: #{workfile_path.inspect}"
             puts "\nCARRIERWAVE TMP PATH: #{CarrierWave.tmp_path.inspect}"
+            puts "\nPERMISSIONS: #{permissions.inspect}"
+            puts "\nDIRECTORY PERMISSIONS: #{directory_permissions.inspect}"
             @file = new_file.copy_to(File.expand_path(workfile_path, root), permissions, directory_permissions)
           end
 
